@@ -1,0 +1,103 @@
+body {
+  font-family: "Arial", Helvetica, sans-serif;
+  background-color: #e8f2ec;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  float: left;
+  border-radius: 50%;
+  margin: 2px;
+  box-shadow: inset 3px 3px 3px grey;
+}
+
+.row {
+  height: 63px;
+}
+
+button {
+  width: 60px;
+  margin: 3px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 2px 0;
+  background-color: steelblue;
+  color: white;
+}
+
+button:hover {
+  background-color: #5b99cc;
+  cursor: pointer;
+}
+
+.reset-btn {
+  width: 150px;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  border-radius: 20px;
+  margin: 20px auto;
+  display: block;
+}
+
+button:focus { 
+  outline: none; 
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.default {
+  background-color: #e8f2ec;
+}
+
+.skeleton {
+  background-color: yellow;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid grey;
+  outline: 1px solid grey;
+  outline-offset: -5px;
+  box-shadow: 3px 3px 3px #565454;
+  min-width: 462px;
+}
+
+.button-row {
+  margin: 10px 0 10px 10px;
+  min-width: 500px;
+}
+
+h1 {
+  margin: 20px 0 0 0;
+  width: 490px;
+  text-align: center;
+  color: steelblue;
+  font-size: 2.5em;
+}
+
+h3, h5 {
+  margin: 0;
+  width: 490px;
+  text-align: center;
+}
+
+.all {
+  width: 490px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.black-msg {
+  color: black;
+}
+
+.red-msg {
+  color: red;
+}
