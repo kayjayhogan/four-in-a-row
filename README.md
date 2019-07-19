@@ -12,3 +12,5 @@ npm install
 ```
 npm run start
 ```
+
+![screenshot](https://res.cloudinary.com/kjhogan/image/upload/v1563576017/four-in-a-row.png)
