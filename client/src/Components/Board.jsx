@@ -1,7 +1,5 @@
 import React from 'react';
-import Circle from './circle.jsx';
-// NOTE: I am aware this code is the polar opposite of DRY code! I am ashamed.
-// Just looking for MVP due to time :\
+import Circle from './Circle.jsx';
 
 class Board extends React.Component {
   constructor(props) {
@@ -182,7 +180,18 @@ class Board extends React.Component {
   }
 
   handleReset() {
-
+    this.setState({
+      blackIsNext: true,
+      gameIsDone: false,
+      winner: '',
+      col1: Array(7).fill(null),
+      col2: Array(7).fill(null),
+      col3: Array(7).fill(null),
+      col4: Array(7).fill(null),
+      col5: Array(7).fill(null),
+      col6: Array(7).fill(null),
+      col7: Array(7).fill(null)
+    });
   }
 
   render() {
@@ -201,77 +210,98 @@ class Board extends React.Component {
     }
 
     return(
-      <div className="all">
-        <h5>LET'S PLAY</h5>
-        <h3>LEGALLY GENERIC, NON-TRADEMARKED</h3>
-        <h3>FOUR-IN-A-ROW PIECES GAME</h3>
-        <div className="button-row">
-          <button onClick={(col) => this.handleClick("col1")}>Place piece</button>
-          <button onClick={() => this.handleClick("col2")}>Place piece</button>
-          <button onClick={() => this.handleClick("col3")}>Place piece</button>
-          <button onClick={() => this.handleClick("col4")}>Place piece</button>
-          <button onClick={() => this.handleClick("col5")}>Place piece</button>
-          <button onClick={() => this.handleClick("col6")}>Place piece</button>
-          <button onClick={() => this.handleClick("col7")}>Place piece</button>
+      <div>        
+        <h1 className="title">MATCH FOUR IN A ROW</h1>
+        <div className="container">
+          <div className="button-row">
+            <button onClick={(col) => this.handleClick("col1")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col2")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col3")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col4")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col5")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col6")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+            <button onClick={() => this.handleClick("col7")}>
+              Place piece
+              <img src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2-300x300.png"></img>
+            </button>
+          </div>
+          <div className="skeleton">
+            <div className="row">
+              <Circle value={this.state.col1[5]} />
+              <Circle value={this.state.col2[5]} />
+              <Circle value={this.state.col3[5]} />
+              <Circle value={this.state.col4[5]} />
+              <Circle value={this.state.col5[5]} />
+              <Circle value={this.state.col6[5]} />
+              <Circle value={this.state.col7[5]} />
+            </div>
+            <div className="row">
+              <Circle value={this.state.col1[4]} />
+              <Circle value={this.state.col2[4]} />
+              <Circle value={this.state.col3[4]} />
+              <Circle value={this.state.col4[4]} />
+              <Circle value={this.state.col5[4]} />
+              <Circle value={this.state.col6[4]} />
+              <Circle value={this.state.col7[4]} />
+            </div>
+            <div className="row">
+              <Circle value={this.state.col1[3]} />
+              <Circle value={this.state.col2[3]} />
+              <Circle value={this.state.col3[3]} />
+              <Circle value={this.state.col4[3]} />
+              <Circle value={this.state.col5[3]} />
+              <Circle value={this.state.col6[3]} />
+              <Circle value={this.state.col7[3]} />
+            </div>
+            <div className="row">
+              <Circle value={this.state.col1[2]} />
+              <Circle value={this.state.col2[2]} />
+              <Circle value={this.state.col3[2]} />
+              <Circle value={this.state.col4[2]} />
+              <Circle value={this.state.col5[2]} />
+              <Circle value={this.state.col6[2]} />
+              <Circle value={this.state.col7[2]} />
+            </div>
+            <div className="row">
+              <Circle value={this.state.col1[1]} />
+              <Circle value={this.state.col2[1]} />
+              <Circle value={this.state.col3[1]} />
+              <Circle value={this.state.col4[1]} />
+              <Circle value={this.state.col5[1]} />
+              <Circle value={this.state.col6[1]} />
+              <Circle value={this.state.col7[1]} />
+            </div>
+            <div className="row">
+              <Circle value={this.state.col1[0]} />
+              <Circle value={this.state.col2[0]} />
+              <Circle value={this.state.col3[0]} />
+              <Circle value={this.state.col4[0]} />
+              <Circle value={this.state.col5[0]} />
+              <Circle value={this.state.col6[0]} />
+              <Circle value={this.state.col7[0]} />
+            </div>
+          </div>
+          {winnerBanner}
+          {resetBtn}
         </div>
-        <div className="skeleton">
-          <div className="row">
-            <Circle value={this.state.col1[5]} />
-            <Circle value={this.state.col2[5]} />
-            <Circle value={this.state.col3[5]} />
-            <Circle value={this.state.col4[5]} />
-            <Circle value={this.state.col5[5]} />
-            <Circle value={this.state.col6[5]} />
-            <Circle value={this.state.col7[5]} />
-          </div>
-          <div className="row">
-            <Circle value={this.state.col1[4]} />
-            <Circle value={this.state.col2[4]} />
-            <Circle value={this.state.col3[4]} />
-            <Circle value={this.state.col4[4]} />
-            <Circle value={this.state.col5[4]} />
-            <Circle value={this.state.col6[4]} />
-            <Circle value={this.state.col7[4]} />
-          </div>
-          <div className="row">
-            <Circle value={this.state.col1[3]} />
-            <Circle value={this.state.col2[3]} />
-            <Circle value={this.state.col3[3]} />
-            <Circle value={this.state.col4[3]} />
-            <Circle value={this.state.col5[3]} />
-            <Circle value={this.state.col6[3]} />
-            <Circle value={this.state.col7[3]} />
-          </div>
-          <div className="row">
-            <Circle value={this.state.col1[2]} />
-            <Circle value={this.state.col2[2]} />
-            <Circle value={this.state.col3[2]} />
-            <Circle value={this.state.col4[2]} />
-            <Circle value={this.state.col5[2]} />
-            <Circle value={this.state.col6[2]} />
-            <Circle value={this.state.col7[2]} />
-          </div>
-          <div className="row">
-            <Circle value={this.state.col1[1]} />
-            <Circle value={this.state.col2[1]} />
-            <Circle value={this.state.col3[1]} />
-            <Circle value={this.state.col4[1]} />
-            <Circle value={this.state.col5[1]} />
-            <Circle value={this.state.col6[1]} />
-            <Circle value={this.state.col7[1]} />
-          </div>
-          <div className="row">
-            <Circle value={this.state.col1[0]} />
-            <Circle value={this.state.col2[0]} />
-            <Circle value={this.state.col3[0]} />
-            <Circle value={this.state.col4[0]} />
-            <Circle value={this.state.col5[0]} />
-            <Circle value={this.state.col6[0]} />
-            <Circle value={this.state.col7[0]} />
-          </div>
-        </div>
-        {winnerBanner}
-        {resetBtn}
       </div>
     );
   }
