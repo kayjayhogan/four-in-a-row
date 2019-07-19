@@ -1,0 +1,35 @@
+{
+  "name": "four-in-a-row",
+  "version": "1.0.0",
+  "description": "A game where your objective is to connect four pieces in a row.",
+  "main": "server/server.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "start": "nodemon ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayjayhogan/four-in-a-row.git"
+  },
+  "author": "Kathleen Hogan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kayjayhogan/four-in-a-row.git/issues"
+  },
+  "homepage": "https://github.com/kayjayhogan/four-in-a-row.git#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0",
+    "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
